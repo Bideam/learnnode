@@ -1,0 +1,15 @@
+<form action="/upload" enctype="multipart/form-data" method="post">
+<input id="file" type="file" name="upload" multiple onchange="showch();"><!--这个选中多个的方式让人觉得有点不爽啊=-= 不是很好用的样子捏-->
+<input type="submit" value="Upload file"/>
+<div id="show"></div>
+</form>
+<script type="text/javascript">
+	function showch(){
+		var files=document.getElementById('file').files,//其中document.getElementById("file").files 	会获取一个数组，数组中的元素拥有的属性有lastModifiedDate，name，size，type，webkitRelativePath。
+			show=document.getElementById('show');
+		for (var i = 0; i < files.length; i++) {
+			show.innerHTML+=files[i].name+"<br>";
+		}
+
+	}
+</script>
